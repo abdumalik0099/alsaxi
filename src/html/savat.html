@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Корзина</title>
+  <link rel="stylesheet" href="../../src/dist/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
+</head>
+<body>
+    <style>
+        .block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 60vh; /* Sahifa o'rtasida turishi uchun */
+    text-align: center;
+}
+
+.block .image {
+    width: 250px;
+    height: auto;
+    margin: 20px 0;
+}
+
+.block p {
+    font-size: 1.2rem;
+    color: #4b5563;
+}
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body{
+        background-color: rgb(225, 223, 219);
+      }
+      .container {
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+      .ri-shopping-cart-2-line{
+        color: #1a56db;
+      }
+      .kar{
+        color: #1a56db;
+      }
+      img {
+        width: 150px;
+      }
+      .product-grid {
+        margin-top: 50px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        justify-content: center;
+        gap: 2rem;
+      }
+      .name{
+        padding: 10px 0;
+      }
+      img{
+        width: 150px;
+      }
+      .product-card{
+        position: relative;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: start;
+      }
+      .installment{
+        padding: 8px 10px;
+        margin: 5px 0;
+        border: 1px solid #fe7300;
+        color: #fe7300;
+        border-radius: 8px;
+      }
+      .reviews{
+        padding: 10px 0;
+      }
+      .rating{
+        padding: 10px 0;
+        color: #fe7300;
+      }
+      .discount-badge{
+        background-color: rgb(184, 62, 62);
+        color: #fff;
+        width: max-content;
+        padding: 5px 10px;
+        border-radius: 10px;
+      }
+      .remove-btn{
+        display: flex;
+        
+      }
+      /* Badge-ni burchakka taqash */
+.product-card {
+    position: relative; /* Badge uchun asos */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Elementlarni vertikal tekislash */
+}
+
+.discount-badge {
+    position: absolute; /* Karta burchagiga mustaqil joylashadi */
+    top: 10px;
+    left: 10px;
+    background-color: rgb(184, 62, 62);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 8px;
+    z-index: 2; /* Rasm tagida qolmasligi uchun */
+    font-size: 12px;
+}
+
+/* Rasmni markazga keltirish */
+.product-card img {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 15px auto; /* Markazlash va pastdan bo'shliq */
+    display: block;
+}
+
+/* Tugmani pastga tekislash va kengaytirish */
+.remove-btn {
+    width: 100%;
+    display: block;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.remove-btn:hover {
+    background-color: #dc2626 !important;
+    transform: scale(0.98);
+}
+
+/* Narx va tekstlarni chiroyli qilish */
+.price {
+    font-weight: bold;
+    font-size: 18px;
+    color: #1a56db;
+    margin-top: auto; /* Narxni tugmadan tepaga suradi */
+}
+    </style>
+    <header>
+      <nav class="nav">
+        <div class="asosiy nav-sticky container">
+          <div class="iconNav">
+            <img src="../assets/svg/asaxiy-logo.svg" alt="" />
+          </div>
+          <div class="btn_nav">
+            <button
+              class="category-btn"
+              onclick="this.classList.toggle('active')"
+            >
+              <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="btn-text">Категории</span>
+            </button>
+          </div>
+          <div class="inputNav">
+            <input type="text" placeholder="поиск..." />
+            <button class="search">Искать</button>
+          </div>
+           <div class="nav_ikons">
+            <div onclick="goToPage('./taqqoslash.html')">
+              <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
+              <div>Сравнение</div>
+            </div>
+
+            <!-- Qolgan ikonlar o'zgarmaydi -->
+            <div>
+              <i class="ri-bank-card-line"></i>
+              <div>Оплатить</div>
+            </div>
+            <div>
+              <i class="ri-truck-line"></i>
+              <div>Отследить</div>
+            </div>
+            <div onclick="goToPage('./savat.html')">
+              <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
+              <div class="kar">Корзина</div>
+            </div>
+
+            <div onclick="goToPage('./yurak.html')">
+              <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
+              <div>Избранное</div>
+            </div>
+            <div>
+              <i class="ri-global-line"></i>
+              <div>O'zbekcha</div>
+            </div>
+            <div>
+              <i class="ri-user-add-line"></i>
+              <div>Войти</div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <div class="bottom_nav">
+          <div class="container flex">
+            <div class="superNarx"><h3>Супер цена</h3></div>
+            <div class="bilmadim"><h3>0-0-6</h3></div>
+            <div class="havo"><h3>Воздухоочистители</h3></div>
+            <div class="telefon"><h3>Смартфоны</h3></div>
+            <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
+            <div class="kitoblar"><h3>Книги</h3></div>
+            <div class="televizor"><h3>Телевизоры</h3></div>
+            <div class="noutbuk"><h3>Ноутбуки</h3></div>
+          </div>
+        </div>
+      </nav>
+    </header>
+  <div id="product-grid" class="product-grid container"></div>
+
+  <script src="../js/fivetennKards.js"></script>
+  <script>
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+function displayCart() {
+  const grid = document.getElementById("product-grid");
+  grid.innerHTML = "";
+
+  if (cart.length === 0) {
+    // Gridni vaqtincha yopib, blokni markazga keltiramiz
+    grid.style.display = "block"; 
+    
+    grid.innerHTML = `
+      <div class="block">
+          <p>Savatda xech narsa yo'q</p>    
+          <img class="image" src="../../src/assets/img/nocard.webp" alt="Empty Cart">
+      </div>  
+    `;
+    return;
+  }
+
+  // Mahsulot bo'lsa, Grid rejimini qaytaramiz
+  grid.style.display = "grid";
+
+  grid.innerHTML = cart.map(id => {
+    const item = products.find(p => p.id === id);
+    if (!item) return '';
+
+    return `
+      <div class="product-card">
+        <div class="discount-badge">${item.discount}</div>
+        <img src="${item.image}" alt="${item.title}">
+        <div class="name">${item.title}</div>
+        <div class="rating">${item.rating}</div>
+        <div class="reviews">${item.reviews}</div>
+        <div class="price">${item.price}</div>
+        <div class="installment">${item.installment}</div>
+        
+        <button class="remove-btn" onclick="toggleCart(${item.id})" style="margin-top:15px; background:#ef4444; color:white; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">
+          Olib tashlash
+        </button>
+      </div>
+    `;
+  }).join('');
+
+  updateUI();
+}
+    function toggleCart(id) {
+      const index = cart.findIndex(i => i === id);
+      if (index > -1) {
+        cart.splice(index, 1);
+      } else {
+        cart.push(id);
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart();
+    }
+
+    function updateUI() {
+      // Navbardagi sonni yangilash (agar navbar shu sahifada bo‘lsa)
+      const shop = document.getElementById('shop');
+      if (shop) shop.textContent = cart.length;
+    }
+
+    window.addEventListener('load', displayCart);
+  </script>
+</body>
+</html>

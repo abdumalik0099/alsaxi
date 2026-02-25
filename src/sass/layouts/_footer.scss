@@ -1,0 +1,310 @@
+.topFooter{
+    background-color: #006BFF;
+    width: 100%;
+    padding: 50px;
+    .flex{
+        display: flex;
+        justify-content: space-around;
+        background-color: #fff;
+        box-shadow: 0px 0px 8px 12px rgba(255, 255, 255, 0.2);
+        border-radius: 20px;
+        padding: 40px 10px;
+        .displayFlex{
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            width: 340px;
+            padding: 0 20px;
+            cursor: pointer;
+        }
+    }
+}
+
+
+
+
+// ====================== FOOTER SCSS ======================
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 50px 0 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.footer__container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+// ====================== TOP QISM (5 ustun) ======================
+
+.footer__top {
+    margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr 1.4fr 1.2fr;
+  gap: 30px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #ddd;
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ====================== USTUN ======================
+
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__col-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+}
+
+.footer__col-link {
+  font-size: 16px;
+  color: #717070;
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+
+.footer__col-link:hover {
+  color: #006BFF;
+}
+
+// ====================== DOSTAVKA KARTOCHKALARI ======================
+
+.footer__delivery {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer__delivery-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.footer__delivery-card:hover {
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border-color: #006BFF;
+}
+
+.footer__delivery-card img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+}
+
+.footer__delivery-card span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  flex: 1;
+}
+
+.footer__delivery-card i {
+  font-size: 18px;
+  color: #999;
+}
+
+// ====================== ALOQA ======================
+
+.footer__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+  transition: color 0.2s;
+    cursor: pointer;
+}
+
+.footer__contact-item:hover {
+  color: #006BFF;
+}
+.footer__contact-item:hover i {
+  color: #006BFF;
+}
+.footer__contact-item i {
+  font-size: 18px;
+  color: #555;
+  width: 22px;
+  text-align: center;
+}
+
+// ====================== PASTKI QISM ======================
+
+.footer__bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  padding: 30px 0 40px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer__bottom-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 16px;
+}
+
+// ====================== TO'LOV USULLARI ======================
+
+.footer__payments {
+  display: flex;
+  gap: 12px;
+}
+
+.footer__payment-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  height: 52px;
+  transition: box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.footer__payment-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.footer__payment-card img {
+  max-width: 90px;
+  max-height: 30px;
+  object-fit: contain;
+}
+
+// ====================== IJTIMOIY TARMOQLAR ======================
+
+.footer__socials-wrapper {
+  text-align: right;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
+}
+
+.footer__socials {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+  }
+}
+
+.footer__social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.footer__social-link i {
+  font-size: 18px;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.footer__social-link:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.footer__social-link:hover i {
+  color: #fff;
+}
+
+.footer__social-link--facebook i { color: #1877f2; }
+.footer__social-link--telegram i { color: #229ed9; }
+.footer__social-link--instagram i { color: #e1306c; }
+.footer__social-link--youtube i   { color: #ff0000; }
+.footer__social-link--rss i       { color: #f26522; }
+
+
+.footer__social-link--facebook{
+    &:hover{
+        background-color: #1877f2;
+    }
+}
+.footer__social-link--telegram{
+    &:hover{
+        background-color: #229ed9;
+    }
+}
+.footer__social-link--instagram{
+    &:hover{
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+
+    }
+}
+.footer__social-link--youtube{
+    &:hover{
+        background-color: #ff0000;
+    }
+}
+.footer__social-link--rss{
+    &:hover{
+        background-color: #f26522;
+    }
+}
+
+// ====================== COPYRIGHT ======================
+
+.footer__copy {
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+  padding: 16px 0;
+  border-top: 1px solid #ddd;
+}

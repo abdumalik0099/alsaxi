@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Книги</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../src/dist/style.css">
+  <style>
+    .kitoblar h3 { color: #1a56db !important; }
+
+    .books-section {
+      max-width: 1400px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .books-section h2 {
+      font-size: 26px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: #111;
+    }
+    /* Asosiy tugma stili */
+.category-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 40px;
+  background-color: #1a56db; /* $primary-blue */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Matn va ikonka doim ustda turishi uchun */
+.category-btn .menu-icon, 
+.category-btn .btn-text {
+  position: relative;
+  z-index: 3;
+}
+
+/* Hoverdagi rangli blok (orqa fonda) */
+.category-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%; /* Dastlab chapda yashirin */
+  width: 100%;
+  height: 100%;
+  background-color: #0d3eb3; /* $hover-blue */
+  z-index: 2;
+}
+
+/* HOVER bo'lganda animatsiya ishga tushadi */
+.category-btn:hover::before {
+  animation: bounceRight 0.8s both;
+}
+
+/* O'NGGA URILIB SAKRASH ANIMATSIYASI */
+@keyframes bounceRight {
+  0% { left: -100%; }
+  30% { left: 0; }       /* Birinchi bor o'ngga kelib urildi */
+  50% { left: -10%; }    /* Orqaga sakradi */
+  70% { left: 0; }       /* Yana urildi */
+  85% { left: -3%; }     /* Kamroq sakradi */
+  100% { left: 0; }      /* To'xtadi */
+}
+
+/* Burger ikonkasining asosiy qutisi */
+.category-btn .menu-icon {
+  width: 22px;
+  height: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Burger chiziqlari */
+.category-btn .menu-icon span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: white;
+  transition: all 0.3s ease;
+}
+
+/* Active klassi qo'shilganda Burgerdan "X" ga aylanish */
+.category-btn.active .menu-icon span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.category-btn.active .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+.category-btn.active .menu-icon span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <div class="nav-sticky">
+        <div class="asosiy nav-sticky container">
+          <div class="iconNav">
+            <img src="../assets/svg/asaxiy-logo.svg" alt="" />
+          </div>
+          <div class="btn_nav">
+            <button class="category-btn" onclick="this.classList.toggle('active')">
+              <div class="menu-icon">
+                <span></span><span></span><span></span>
+              </div>
+              <span class="btn-text">Категории</span>
+            </button>
+          </div>
+          <div class="inputNav">
+            <input type="text" placeholder="поиск..." />
+            <button class="search">Искать</button>
+          </div>
+          <div class="nav_ikons">
+            <div onclick="goToPage('./taqqoslash.html')">
+              <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
+              <div>Сравнение</div>
+            </div>
+            <div>
+              <i class="ri-bank-card-line"></i>
+              <div>Оплатить</div>
+            </div>
+            <div>
+              <i class="ri-truck-line"></i>
+              <div>Отследить</div>
+            </div>
+            <div onclick="goToPage('./savat.html')">
+              <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
+              <div>Корзина</div>
+            </div>
+            <div onclick="goToPage('./yurak.html')">
+              <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
+              <div>Избранное</div>
+            </div>
+            <div>
+              <i class="ri-global-line"></i>
+              <div>O'zbekcha</div>
+            </div>
+            <div>
+              <i class="ri-user-add-line"></i>
+              <div>Войти</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="bottom_nav">
+        <div class="container flex">
+          <div class="superNarx"><h3>Супер цена</h3></div>
+          <div class="bilmadim"><h3>0-0-6</h3></div>
+          <div class="havo"><h3>Воздухоочистители</h3></div>
+          <div class="telefon"><h3>Смартфоны</h3></div>
+          <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
+          <div class="kitoblar"><h3>Книги</h3></div>
+          <div class="televizor"><h3>Телевизоры</h3></div>
+          <div class="noutbuk"><h3>Ноутбуки</h3></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <div class="books-section">
+    <h2>Книги</h2>
+    <div class="product-grid" id="books-grid"></div>
+  </div>
+
+  <script src="../js/fivetennKards.js"></script>
+  <script src="../js/animation.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/search.js"></script>
+  <script>
+    // ====================== KITOBLAR DATABAZASI ======================
+    // const books = [
+    //   { id: 101, discount: "-26%", image: "../assets/img/kitobrazdel.webp", title: "Граф Монте-Кристо",         author: "Александр Дюма",    rating: "★★★★★", reviews: "128 отзывов", price: "149 000 сум", installment: "24 900 сум x 6 мес" },
+    //   { id: 102, discount: "-17%", image: "../assets/img/kitob.webp", title: "Атомные привычки",          author: "Джеймс Клир",       rating: "★★★★★", reviews: "95 отзывов",  price: "99 000 сум",  installment: "16 500 сум x 6 мес" },
+    //   { id: 103, discount: "-20%", image: "../assets/img/kitob.webp", title: "Мастер и Маргарита",        author: "Михаил Булгаков",   rating: "★★★★☆", reviews: "74 отзывов",  price: "89 000 сум",  installment: "14 900 сум x 6 мес" },
+    //   { id: 104, discount: "-15%", image: "../assets/img/kitob.webp", title: "Богатый папа, бедный папа", author: "Роберт Кийосаки",  rating: "★★★★★", reviews: "203 отзывов", price: "119 000 сум", installment: "19 900 сум x 6 мес" },
+    //   { id: 105, discount: "-30%", image: "../assets/img/kitob.webp", title: "Думай и богатей",           author: "Наполеон Хилл",     rating: "★★★★★", reviews: "156 отзывов", price: "79 000 сум",  installment: "13 200 сум x 6 мес" },
+    //   { id: 106, discount: "-10%", image: "../assets/img/kitob.webp", title: "1984",                      author: "Джордж Оруэлл",     rating: "★★★★★", reviews: "88 отзывов",  price: "109 000 сум", installment: "18 200 сум x 6 мес" },
+    //   { id: 107, discount: "-22%", image: "../assets/img/kitob.webp", title: "Гарри Поттер и камень",     author: "Дж. К. Роулинг",   rating: "★★★★★", reviews: "312 отзывов", price: "129 000 сум", installment: "21 500 сум x 6 мес" },
+    //   { id: 108, discount: "-18%", image: "../assets/img/kitob.webp", title: "Алхимик",                  author: "Пауло Коэльо",      rating: "★★★★☆", reviews: "67 отзывов",  price: "85 000 сум",  installment: "14 200 сум x 6 мес" },
+    //   { id: 109, discount: "-25%", image: "../assets/img/kitob.webp", title: "Война и мир",              author: "Лев Толстой",       rating: "★★★★★", reviews: "44 отзывов",  price: "175 000 сум", installment: "29 200 сум x 6 мес" },
+    //   { id: 110, discount: "-12%", image: "../assets/img/kitob.webp", title: "Преступление и наказание", author: "Фёдор Достоевский", rating: "★★★★★", reviews: "91 отзывов",  price: "95 000 сум",  installment: "15 800 сум x 6 мес" },
+    //   { id: 111, discount: "-20%", image: "../assets/img/kitob.webp", title: "Сила привычки",            author: "Чарлз Дахигг",      rating: "★★★★☆", reviews: "52 отзывов",  price: "99 000 сум",  installment: "16 500 сум x 6 мес" },
+    //   { id: 112, discount: "-14%", image: "../assets/img/kitob.webp", title: "Искусство войны",          author: "Сунь Цзы",          rating: "★★★★★", reviews: "38 отзывов",  price: "69 000 сум",  installment: "11 500 сум x 6 мес" },
+    // ];
+
+    // ====================== KARTALARNI CHIQARISH ======================
+    function renderBooks() {
+      const grid = document.getElementById('books-grid');
+      if (!grid) return;
+      grid.innerHTML = '';
+
+      books.forEach(book => {
+  const card = document.createElement('div');
+  card.className = 'product-card';
+  card.innerHTML = `
+    <div class="discount-badge">${book.discount}</div>
+    <div class="icons">
+      <button class="heart-btn" data-id="${book.id}"><i class="ri-heart-3-line"></i></button>
+      <button class="compare-btn" data-id="${book.id}"><i class="ri-scales-line"></i></button>
+    </div>
+    <img src="${book.image}" alt="${book.title}"
+         onclick="goToPage('./obzor.html?id=${book.id}')"
+         style="cursor:pointer;">
+    <div class="name"
+         onclick="goToPage('./obzor.html?id=${book.id}')"
+         style="cursor:pointer;">${book.title}</div>
+    <div class="reviews">${book.author}</div>
+    <div class="rating">${book.rating}</div>
+    <div class="reviews">${book.reviews}</div>
+    <div class="price">${book.price}</div>
+    <div class="installment">${book.installment}</div>
+    <div class="buttons">
+      <button class="buy-btn"><span class="btn-text">Купить</span></button>
+      <button class="cart-btn"><i class="ri-shopping-cart-2-line"></i></button>
+    </div>
+  `;
+  grid.appendChild(card);
+});
+
+      addBookListeners();
+      restoreBookIcons();
+      updateCounts();
+    }
+
+    // ====================== TUGMA LISTENERLAR ======================
+    function addBookListeners() {
+      document.querySelectorAll('.heart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          const id = parseInt(btn.dataset.id);
+          addToStorage('favorites', id, btn);
+        });
+      });
+
+      document.querySelectorAll('.compare-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          const id = parseInt(btn.dataset.id);
+          addToStorage('compare', id, btn);
+        });
+      });
+
+      document.querySelectorAll('.cart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          const id = parseInt(btn.closest('.product-card').querySelector('.heart-btn').dataset.id);
+          addToStorage('cart', id);
+        });
+      });
+    }
+
+    // ====================== IKONLARNI TIKLASH ======================
+    function restoreBookIcons() {
+      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+      const compares  = JSON.parse(localStorage.getItem('compare'))   || [];
+
+      document.querySelectorAll('.heart-btn').forEach(btn => {
+        const id   = parseInt(btn.dataset.id);
+        const icon = btn.querySelector('i');
+        if (favorites.includes(id)) {
+          icon.classList.replace('ri-heart-3-line', 'ri-heart-3-fill');
+          icon.style.color = '#ef4444';
+        } else {
+          icon.classList.replace('ri-heart-3-fill', 'ri-heart-3-line');
+          icon.style.color = '';
+        }
+      });
+
+      document.querySelectorAll('.compare-btn').forEach(btn => {
+        const id   = parseInt(btn.dataset.id);
+        const icon = btn.querySelector('i');
+        if (compares.includes(id)) {
+          icon.classList.replace('ri-scales-line', 'ri-scales-fill');
+          icon.style.color = '#1a56db';
+        } else {
+          icon.classList.replace('ri-scales-fill', 'ri-scales-line');
+          icon.style.color = '';
+        }
+      });
+    }
+
+    // ====================== SAHIFA YUKLANGANDA ======================
+    window.addEventListener('load', () => {
+      renderBooks();
+    });
+  </script>
+
+</body>
+</html>

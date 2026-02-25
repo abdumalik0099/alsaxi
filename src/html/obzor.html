@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahsulot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../dist/style.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #f0efeb; 
+       color: #111; }
+
+    .container { max-width: 1400px; margin: 0 auto; padding: 0 20px; }
+
+    /* ===== PRODUCT PAGE ===== */
+    .product-page {
+      max-width: 1400px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 500px 1fr 320px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    /* ===== CHAP: RASMLAR ===== */
+    .product-images {
+      background: #fff;
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      gap: 12px;
+    }
+
+    .product-thumbs {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .thumb {
+      width: 70px;
+      height: 70px;
+      border-radius: 10px;
+      border: 2px solid #e5e7eb;
+      overflow: hidden;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      background: #f9fafb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .thumb.active { border-color: #1a56db; }
+    .thumb:hover  { border-color: #1a56db; }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .product-main-img {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      min-height: 360px;
+    }
+
+    .product-main-img img {
+      max-width: 100%;
+      max-height: 360px;
+      object-fit: contain;
+    }
+
+    .product-main-img .action-icons {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .action-icons button {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid #e5e7eb;
+      background: #fff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .action-icons button:hover { border-color: #1a56db; background: #eff6ff; }
+    .action-icons button i { font-size: 18px; color: #555; }
+
+    /* ===== O'RTA: INFO ===== */
+    .product-info {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px;
+    }
+
+    .product-info h1 {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .product-meta-top {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .stars { color: #fe7300; font-size: 18px; letter-spacing: 2px; }
+    .review-count { font-size: 14px; color: #6b7280; }
+
+    .share-btn {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      color: #1a56db;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .product-price {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fe7300;
+      margin-bottom: 20px;
+    }
+
+    /* Rang tanlash */
+    .option-label {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .option-label strong { color: #111; }
+
+    .color-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .color-option {
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      padding: 4px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+      width: 80px;
+      height: 80px;
+      overflow: hidden;
+      background: #f9fafb;
+    }
+
+    .color-option.active { border-color: #1a56db; }
+    .color-option:hover  { border-color: #1a56db; }
+
+    .color-option img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Xotira tanlash */
+    .memory-options {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .memory-btn {
+      padding: 8px 20px;
+      border-radius: 8px;
+      border: 2px solid #e5e7eb;
+      background: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: #111;
+    }
+
+    .memory-btn.active {
+      border-color: #1a56db;
+      background: #eff6ff;
+      color: #1a56db;
+    }
+
+    .memory-btn:hover { border-color: #1a56db; }
+
+    /* Xususiyatlar */
+    .product-specs {
+      border-top: 1px solid #f3f4f6;
+      padding-top: 20px;
+      margin-top: 4px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px dashed #f3f4f6;
+      font-size: 14px;
+    }
+
+    .spec-row:last-child { border-bottom: none; }
+    .spec-key { color: #6b7280; font-weight: 500; }
+    .spec-val { color: #111; font-weight: 600; text-align: right; }
+    .spec-val.blue { color: #1a56db; }
+    .spec-val.green { color: #10b981; }
+
+    /* Tugmalar */
+    .product-btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .btn-cart {
+      flex: 1;
+      background: #10b981;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+
+    .btn-cart:hover { background: #059669; }
+
+    .btn-buy {
+      flex: 1;
+      background: #1a56db;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 0;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-buy:hover { background: #1443b0; }
+
+    /* ===== O'NG: RASSROCHKA ===== */
+    .product-installment {
+      background: #fff;
+      border-radius: 16px;
+      padding: 24px;
+      position: sticky;
+      top: 20px;
+    }
+
+    .installment-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .installment-title i { font-size: 16px; color: #9ca3af; }
+
+    /* Oylar slider */
+    .months-label {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 10px;
+    }
+
+    .months-track {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .month-dot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .month-dot span {
+      font-size: 13px;
+      font-weight: 600;
+      color: #9ca3af;
+    }
+
+    .month-dot .dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #e5e7eb;
+      transition: background 0.2s;
+    }
+
+    .month-dot.active span { color: #10b981; }
+    .month-dot.active .dot { background: #10b981; }
+
+    .months-line {
+      height: 4px;
+      background: #e5e7eb;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      position: relative;
+    }
+
+    .months-line-fill {
+      height: 100%;
+      width: 45%;
+      background: #10b981;
+      border-radius: 4px;
+    }
+
+    /* Xazna karta */
+    .xazna-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      background: #fff;
+    }
+
+    .xazna-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .xazna-logo-box {
+      background: #111;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 6px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .xazna-logo-box i { color: #10b981; font-size: 14px; }
+
+    .xazna-nasiya {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+
+    .xazna-badge {
+      background: #1a56db;
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 3px 7px;
+      border-radius: 6px;
+    }
+
+    .xazna-price {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fe7300;
+    }
+
+    .xazna-sum { font-size: 12px; color: #6b7280; }
+
+    /* Jami summa */
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .total-row strong { color: #111; font-size: 15px; }
+
+    /* Buyurtma tugmasi */
+    .btn-order {
+      width: 100%;
+      background: #fe7300;
+      color: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px 0;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-order:hover { background: #e66200; transform: scale(0.98); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .product-page { grid-template-columns: 1fr 1fr; }
+      .product-installment { grid-column: 1 / -1; position: static; }
+    }
+
+    @media (max-width: 640px) {
+      .product-page { grid-template-columns: 1fr; }
+      .product-images { flex-direction: column-reverse; }
+      .product-thumbs { flex-direction: row; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <header>
+    <nav class="nav">
+      <div class="nav-sticky">
+        <div class="asosiy nav-sticky container">
+          <div class="iconNav">
+            <img src="../assets/svg/asaxiy-logo.svg" alt="" />
+          </div>
+          <div class="btn_nav">
+            <button class="category-btn" onclick="this.classList.toggle('active')">
+              <div class="menu-icon"><span></span><span></span><span></span></div>
+              <span class="btn-text">Категории</span>
+            </button>
+          </div>
+          <div class="inputNav">
+            <input type="text" placeholder="поиск..." />
+            <button class="search">Искать</button>
+          </div>
+          <div class="nav_ikons">
+            <div onclick="goToPage('./taqqoslash.html')">
+              <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
+              <div>Сравнение</div>
+            </div>
+            <div><i class="ri-bank-card-line"></i><div>Оплатить</div></div>
+            <div><i class="ri-truck-line"></i><div>Отследить</div></div>
+            <div onclick="goToPage('./savat.html')">
+              <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
+              <div>Корзина</div>
+            </div>
+            <div onclick="goToPage('./yurak.html')">
+              <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
+              <div>Избранное</div>
+            </div>
+            <div><i class="ri-global-line"></i><div>O'zbekcha</div></div>
+            <div><i class="ri-user-add-line"></i><div>Войти</div></div>
+          </div>
+        </div>
+      </div>
+      <hr />
+      <div class="bottom_nav">
+        <div class="container flex">
+          <div class="superNarx"><h3>Супер цена</h3></div>
+          <div class="bilmadim"><h3>0-0-6</h3></div>
+          <div class="havo"><h3>Воздухоочистители</h3></div>
+          <div class="telefon"><h3>Смартфоны</h3></div>
+          <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
+          <div class="kitoblar"><h3>Книги</h3></div>
+          <div class="televizor"><h3>Телевизоры</h3></div>
+          <div class="noutbuk"><h3>Ноутбуки</h3></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== MAHSULOT SAHIFASI ===== -->
+  <div class="product-page" id="product-detail">
+    <!-- JS to'ldiradi -->
+  </div>
+
+  <script src="../js/fivetennKards.js"></script>
+    <script src="../js/animation.js"></script>   <!-- ✅ QO'SHING -->
+  <script src="../js/search.js"></script>        <!-- ✅ QO'SHING -->
+  <script src="../js/search.js"></script> <!-- ✅ QO'SHING -->
+  <script>
+    // ====================== URL DAN ID OLISH ======================
+    function getProductId() {
+      const params = new URLSearchParams(window.location.search);
+      return parseInt(params.get('id'));
+    }
+
+    // ====================== SAHIFANI TO'LDIRISH ======================
+    function renderProduct() {
+      const id = getProductId();
+      const product = products.find(p => p.id === id);
+      const detail  = document.getElementById('product-detail');
+
+      if (!product) {
+        detail.innerHTML = `
+          <div style="text-align:center; padding:80px 20px; grid-column:1/-1;">
+            <i class="ri-error-warning-line" style="font-size:60px; color:#e5e7eb;"></i>
+            <h2 style="margin-top:16px; color:#9ca3af;">Mahsulot topilmadi</h2>
+          </div>
+        `;
+        return;
+      }
+
+      // Oy bo'yicha narx hisoblash
+      const priceNum = parseInt(product.price.replace(/\D/g, ''));
+      const monthly6  = Math.round(priceNum / 6).toLocaleString('ru-RU');
+      const monthly12 = Math.round(priceNum / 12).toLocaleString('ru-RU');
+
+      detail.innerHTML = `
+        <!-- ===== CHAP: RASMLAR ===== -->
+        <div class="product-images">
+          <div class="product-thumbs">
+            <div class="thumb active" onclick="setMainImg(this, '${product.image}')">
+              <img src="${product.image}" alt="">
+            </div>
+            <div class="thumb" onclick="setMainImg(this, '${product.image}')">
+              <img src="${product.image}" alt="">
+            </div>
+            <div class="thumb" onclick="setMainImg(this, '${product.image}')">
+              <img src="${product.image}" alt="">
+            </div>
+            <div class="thumb" onclick="setMainImg(this, '${product.image}')">
+              <img src="${product.image}" alt="">
+            </div>
+          </div>
+          <div class="product-main-img">
+            <img id="mainImg" src="${product.image}" alt="${product.title}">
+            <div class="action-icons">
+              <button title="Избранное" onclick="toggleFav(${product.id}, this)">
+                <i class="ri-heart-3-line" id="favIcon_${product.id}"></i>
+              </button>
+              <button title="Сравнение" onclick="toggleComp(${product.id}, this)">
+                <i class="ri-scales-line" id="compIcon_${product.id}"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== O'RTA: INFO ===== -->
+        <div class="product-info">
+          <h1>${product.title}</h1>
+          <div class="product-meta-top">
+            <span class="stars">${product.rating}</span>
+            <span class="review-count">${product.reviews}</span>
+            <button class="share-btn">
+              <i class="ri-share-forward-line"></i> Поделиться
+            </button>
+          </div>
+          <div class="product-price">${product.price}</div>
+
+          <div class="option-label">Цвет : <strong>Awesome White</strong></div>
+          <div class="color-options">
+            <div class="color-option active">
+              <img src="${product.image}" alt="">
+            </div>
+            <div class="color-option">
+              <img src="${product.image}" alt="">
+            </div>
+            <div class="color-option">
+              <img src="${product.image}" alt="">
+            </div>
+          </div>
+
+          <div class="option-label">Объем встроенной памяти : <strong>128GB</strong></div>
+          <div class="memory-options">
+            <button class="memory-btn active">128GB</button>
+            <button class="memory-btn">256GB</button>
+          </div>
+
+          <div class="product-specs">
+            <div class="spec-row">
+              <span class="spec-key">Артикул:</span>
+              <span class="spec-val">T${product.id}138 <i class="ri-file-copy-line" style="cursor:pointer;color:#1a56db;"></i></span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Бренд:</span>
+              <span class="spec-val blue">Samsung</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Модель:</span>
+              <span class="spec-val">A366</span>
+            </div>
+            <div class="spec-row">
+              <span class="spec-key">Наличие:</span>
+              <span class="spec-val green">● В наличии</span>
+            </div>
+          </div>
+
+          <div class="product-btns">
+            <button class="btn-cart" onclick="addToCart(${product.id})">
+              <i class="ri-shopping-cart-2-line"></i> Добавить в корзину
+            </button>
+            <button class="btn-buy">Купить в один клик</button>
+          </div>
+        </div>
+
+        <!-- ===== O'NG: RASSROCHKA ===== -->
+        <div class="product-installment">
+          <div class="installment-title">
+            Рассрочка платежа <i class="ri-information-line"></i>
+          </div>
+          <div class="months-label">Месяцы</div>
+          <div class="months-track">
+            <div class="month-dot" onclick="selectMonth(this, 3)"><span>3</span><div class="dot"></div></div>
+            <div class="month-dot active" onclick="selectMonth(this, 6)"><span>6</span><div class="dot"></div></div>
+            <div class="month-dot" onclick="selectMonth(this, 12)"><span>12</span><div class="dot"></div></div>
+            <div class="month-dot" onclick="selectMonth(this, 18)"><span>18</span><div class="dot"></div></div>
+          </div>
+          <div class="months-line"><div class="months-line-fill" id="monthsFill"></div></div>
+
+          <div class="xazna-card">
+            <div class="xazna-logo">
+              <div>
+                <div class="xazna-logo-box">
+                  <i class="ri-home-smile-line"></i> xazna
+                </div>
+                <div class="xazna-nasiya">nasiya</div>
+              </div>
+              <div class="xazna-badge">0-0-6</div>
+            </div>
+            <div style="text-align:right;">
+              <div class="xazna-price" id="monthlyPrice">${monthly6} сум</div>
+              <div class="xazna-sum">в месяц</div>
+            </div>
+          </div>
+
+          <div class="total-row">
+            <span>Общая сумма</span>
+            <strong>${product.price}</strong>
+          </div>
+
+          <button class="btn-order">Заказать в рассрочку</button>
+        </div>
+      `;
+
+      // Ikonlarni tiklash
+      restoreDetailIcons(product.id);
+      updateCounts();
+
+      // Memory tugmalar
+      document.querySelectorAll('.memory-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('.memory-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      // Rang tanlash
+      document.querySelectorAll('.color-option').forEach(opt => {
+        opt.addEventListener('click', () => {
+          document.querySelectorAll('.color-option').forEach(o => o.classList.remove('active'));
+          opt.classList.add('active');
+        });
+      });
+    }
+
+    // ====================== ASOSIY RASM ======================
+    function setMainImg(thumb, src) {
+      document.getElementById('mainImg').src = src;
+      document.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+      thumb.classList.add('active');
+    }
+
+    // ====================== OY TANLASH ======================
+    function selectMonth(el, months) {
+      document.querySelectorAll('.month-dot').forEach(d => d.classList.remove('active'));
+      el.classList.add('active');
+
+      const fills = { 3: '15%', 6: '45%', 12: '75%', 18: '100%' };
+      document.getElementById('monthsFill').style.width = fills[months];
+
+      const id = getProductId();
+      const product = products.find(p => p.id === id);
+      if (!product) return;
+      const priceNum = parseInt(product.price.replace(/\D/g, ''));
+      const monthly = Math.round(priceNum / months).toLocaleString('ru-RU');
+      document.getElementById('monthlyPrice').textContent = monthly + ' сум';
+    }
+
+    // ====================== SAVAT ======================
+    function addToCart(id) {
+      addToStorage('cart', id);
+      updateCounts();
+
+      // Chiroyli xabar
+      const toast = document.createElement('div');
+      toast.textContent = '✅ Savatga qo\'shildi!';
+      toast.style.cssText = `
+        position:fixed; bottom:30px; left:50%; transform:translateX(-50%);
+        background:#111; color:#fff; padding:12px 28px; border-radius:12px;
+        font-size:15px; font-weight:600; z-index:9999;
+        animation: fadeInUp 0.3s ease;
+      `;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 2500);
+    }
+
+    // ====================== YURAK ======================
+    function toggleFav(id, btn) {
+      addToStorage('favorites', id);
+      const icon = document.getElementById('favIcon_' + id);
+      const favs = JSON.parse(localStorage.getItem('favorites')) || [];
+      if (favs.includes(id)) {
+        icon.classList.replace('ri-heart-3-line', 'ri-heart-3-fill');
+        icon.style.color = '#ef4444';
+      } else {
+        icon.classList.replace('ri-heart-3-fill', 'ri-heart-3-line');
+        icon.style.color = '';
+      }
+      updateCounts();
+    }
+
+    // ====================== TAQQOSLASH ======================
+    function toggleComp(id, btn) {
+      addToStorage('compare', id);
+      const icon = document.getElementById('compIcon_' + id);
+      const comps = JSON.parse(localStorage.getItem('compare')) || [];
+      if (comps.includes(id)) {
+        icon.classList.replace('ri-scales-line', 'ri-scales-fill');
+        icon.style.color = '#1a56db';
+      } else {
+        icon.classList.replace('ri-scales-fill', 'ri-scales-line');
+        icon.style.color = '';
+      }
+      updateCounts();
+    }
+
+    // ====================== IKONLARNI TIKLASH ======================
+    function restoreDetailIcons(id) {
+      const favs  = JSON.parse(localStorage.getItem('favorites')) || [];
+      const comps = JSON.parse(localStorage.getItem('compare'))   || [];
+
+      const favIcon  = document.getElementById('favIcon_'  + id);
+      const compIcon = document.getElementById('compIcon_' + id);
+
+      if (favIcon && favs.includes(id)) {
+        favIcon.classList.replace('ri-heart-3-line', 'ri-heart-3-fill');
+        favIcon.style.color = '#ef4444';
+      }
+      if (compIcon && comps.includes(id)) {
+        compIcon.classList.replace('ri-scales-line', 'ri-scales-fill');
+        compIcon.style.color = '#1a56db';
+      }
+    }
+
+    // ====================== SAHIFA YUKLANGANDA ======================
+    window.addEventListener('load', () => {
+      renderProduct();
+    });
+  </script>
+
+</body>
+</html>
