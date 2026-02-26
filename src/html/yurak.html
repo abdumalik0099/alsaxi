@@ -8,288 +8,168 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css">
 </head>
 <body>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      body{
-        background-color: rgb(225, 223, 219);
-      }
-      .container {
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-      }
-      img {
-        width: 150px;
-      }
-      .product-grid {
-        margin-top: 50px;
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        justify-content: center;
-        gap: 2rem;
-      }
-      .name{
-        padding: 10px 0;
-      }
-      img{
-        width: 150px;
-      }
-      .product-card{
-        position: relative;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        text-align: start;
-      }
-      .installment{
-        padding: 8px 10px;
-        margin: 5px 0;
-        border: 1px solid #fe7300;
-        color: #fe7300;
-        border-radius: 8px;
-      }
-      .reviews{
-        padding: 10px 0;
-      }
-      .rating{
-        padding: 10px 0;
-        color: #fe7300;
-      }
-      .ri-poker-hearts-line{
-        color: #1a56db;
-      }
-      .izb{
-        color: #1a56db;
-      }
-      .discount-badge{
-        background-color: rgb(184, 62, 62);
-        color: #fff;
-        width: max-content;
-        padding: 5px 10px;
-        border-radius: 10px;
-      }
-      .remove-btn{
-        display: flex;
-        
-      }
-      /* Badge-ni burchakka taqash */
-.product-card {
-    position: relative; /* Badge uchun asos */
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Elementlarni vertikal tekislash */
-}
-
-.discount-badge {
-    position: absolute; /* Karta burchagiga mustaqil joylashadi */
-    top: 10px;
-    left: 10px;
-    background-color: rgb(184, 62, 62);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 8px;
-    z-index: 2; /* Rasm tagida qolmasligi uchun */
-    font-size: 12px;
-}
-
-/* Rasmni markazga keltirish */
-.product-card img {
-    width: 100%;
-    max-width: 150px;
-    height: auto;
-    margin: 0 auto 15px auto; /* Markazlash va pastdan bo'shliq */
-    display: block;
-}
-
-/* Tugmani pastga tekislash va kengaytirish */
-.remove-btn {
-    width: 100%;
-    display: block;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.remove-btn:hover {
-    background-color: #dc2626 !important;
-    transform: scale(0.98);
-}
-
-/* Narx va tekstlarni chiroyli qilish */
-.price {
-    font-weight: bold;
-    font-size: 18px;
-    color: #1a56db;
-    margin-top: auto; /* Narxni tugmadan tepaga suradi */
-}
-.block {
-    display: flex;
-    flex-direction: column; /* Matn va rasmni ustma-ust qo'yadi */
-    align-items: center;    /* Ichidagi elementlarni (rasm/tekst) markazga oladi */
-    justify-content: center; /* Vertikal markazlash */
-    
-    width: 100%;            /* Butun kenglikni egallashi shart */
-    min-height: 70vh;       /* Sahifaning 70% balandligini egallaydi, shunda markazda ko'rinadi */
-    text-align: center;
-    
-    /* Agar tepadan navbar xalaqit bersa: */
-    margin: 0 auto; 
-}
-
-.block .image {
-    width: 300px;           /* Rasmni biroz kattalashtirdik */
-    height: auto;
-    display: block;
-    margin-top: 20px;       /* Matndan keyin masofa */
-}
-
-.block p {
-    font-size: 20px;
-    color: #4b5563;
-    font-weight: 500;
-}
-    </style>
-
-    <header>
-      <nav class="nav">
-        <div class="asosiy nav-sticky container">
-          <div class="iconNav">
-            <img src="../assets/svg/asaxiy-logo.svg" alt="" />
-          </div>
-          <div class="btn_nav">
-            <button
-              class="category-btn"
-              onclick="this.classList.toggle('active')"
-            >
-              <div class="menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-              <span class="btn-text">Категории</span>
-            </button>
-          </div>
-          <div class="inputNav">
-            <input type="text" placeholder="поиск..." />
-            <button class="search">Искать</button>
-          </div>
-           <div class="nav_ikons">
-            <div onclick="goToPage('../html/taqqoslash.html')">
-              <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
-              <div>Сравнение</div>
-            </div>
-
-            <!-- Qolgan ikonlar o'zgarmaydi -->
-            <div>
-              <i class="ri-bank-card-line"></i>
-              <div>Оплатить</div>
-            </div>
-            <div>
-              <i class="ri-truck-line"></i>
-              <div>Отследить</div>
-            </div>
-            <div onclick="goToPage('../html/savat.html')">
-              <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
-              <div>Корзина</div>
-            </div>
-
-            <div onclick="goToPage('./yurak.html')">
-              <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
-              <div class="izb">Избранное</div>
-            </div>
-            <div>
-              <i class="ri-global-line"></i>
-              <div>O'zbekcha</div>
-            </div>
-            <div>
-              <i class="ri-user-add-line"></i>
-              <div>Войти</div>
-            </div>
-          </div>
+  <header>
+    <nav class="nav">
+      <div class="asosiy nav-sticky container">
+        <div class="iconNav">
+          <img onclick="goToPage('../../index.html')" src="../assets/svg/asaxiy-logo.svg" alt="" style="cursor: pointer;">
         </div>
-        <hr />
-        <div class="bottom_nav">
-          <div class="container flex">
-            <div class="superNarx"><h3>Супер цена</h3></div>
-            <div class="bilmadim"><h3>0-0-6</h3></div>
-            <div class="havo"><h3>Воздухоочистители</h3></div>
-            <div class="telefon"><h3>Смартфоны</h3></div>
-            <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
-            <div class="kitoblar"><h3>Книги</h3></div>
-            <div class="televizor"><h3>Телевизоры</h3></div>
-            <div class="noutbuk"><h3>Ноутбуки</h3></div>
-          </div>
+        <div class="btn_nav">
+          <button class="category-btn category-main-btn">
+            <div class="menu-icon">
+              <span></span><span></span><span></span>
+            </div>
+            <span class="btn-text">Категории</span>
+          </button>
         </div>
-      </nav>
-    </header>
+        <div class="inputNav">
+          <input class="navSearch" type="text" placeholder="поиск..." />
+          <button class="search">Искать</button>
+        </div>
+        <div class="nav_ikons">
+          <div onclick="goToPage('./taqqoslash.html')">
+            <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
+            <div>Сравнение</div>
+          </div>
+          <div><i class="ri-bank-card-line"></i><div>Оплатить</div></div>
+          <div><i class="ri-truck-line"></i><div>Отследить</div></div>
+          <div onclick="goToPage('./savat.html')">
+            <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
+            <div>Корзина</div>
+          </div>
+          <div onclick="goToPage('./yurak.html')">
+            <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
+            <div>Избранное</div>
+          </div>
+          <div><i class="ri-global-line"></i><div>O'zbekcha</div></div>
+          <div id="loginTrigger"><i class="ri-user-add-line"></i><div>Войти</div></div>
+        </div>
+      </div>
+      <hr />
+      <div class="bottom_nav">
+        <div class="container flex">
+          <div class="superNarx"><h3>Супер цена</h3></div>
+          <div class="bilmadim"><h3>0-0-6</h3></div>
+          <div class="havo"><h3>Воздухоочистители</h3></div>
+          <div class="telefon"><h3>Смартфоны</h3></div>
+          <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
+          <div class="kitoblar"><h3>Книги</h3></div>
+          <div class="televizor"><h3>Телевизоры</h3></div>
+          <div class="noutbuk"><h3>Ноутбуки</h3></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== SARLAVHA ===== -->
+  <div class="container" style="margin-top:32px; margin-bottom:8px;">
+    <h2 style="font-size:22px; font-weight:700; color:#111;">
+      <i class="ri-heart-3-fill" style="color:#ef4444; margin-right:8px;"></i>Избранное
+      <span id="favCount" style="font-size:14px; color:#9ca3af; font-weight:400; margin-left:8px;"></span>
+    </h2>
+  </div>
+
   <div id="product-grid" class="product-grid container"></div>
 
   <script src="../js/fivetennKards.js"></script>
+  <script src="../js/search.js"></script>
+  <script src="../js/animation.js"></script>
+  <script src="../js/script.js"></script>
+  <script src="../js/search.js"></script>
+
   <script>
-function renderFavorites() {
-  const savedIds = JSON.parse(localStorage.getItem('favorites')) || [];
-  const grid = document.getElementById("product-grid");
-  grid.innerHTML = "";
+    function renderFavorites() {
+      const savedIds = JSON.parse(localStorage.getItem('favorites')) || [];
+      const grid     = document.getElementById('product-grid');
+      const countEl  = document.getElementById('favCount');
+      grid.innerHTML = '';
 
-  if (savedIds.length === 0) {
-    // MUHIM: Grid xususiyatini bekor qilamiz, shunda .block butun kenglikni oladi
-    grid.style.display = "block"; 
-    
-    grid.innerHTML = `
-    <div class="block">
-        <p>Like bosilmagan</p>    
-        <img class="image" src="../../src/assets/img/nocard.webp" alt="">
-    </div>  
-    `;
-    return;
-  }
+      if (countEl) countEl.textContent = savedIds.length ? `(${savedIds.length} ta)` : '';
 
-  // Agar mahsulot bo'lsa, Grid rejimini qaytaramiz
-  grid.style.display = "grid"; 
+      // ===== BO'SH =====
+      if (savedIds.length === 0) {
+        grid.style.display        = 'flex';
+        grid.style.justifyContent = 'center';
+        grid.style.alignItems     = 'center';
+        grid.style.minHeight      = '60vh';
+        grid.innerHTML = `
+          <div style="text-align:center; padding:40px 20px;">
+            <i class="ri-heart-3-line" style="font-size:72px; color:#e5e7eb;"></i>
+            <h3 style="margin-top:16px; color:#9ca3af; font-size:18px; font-weight:600;">Избранное bo'sh</h3>
+            <p style="color:#c4c4c4; font-size:14px; margin-top:8px;">Mahsulot kartasidagi ❤️ tugmasini bosing</p>
+          </div>
+        `;
+        return;
+      }
 
-  savedIds.forEach(id => {
-    const item = products.find(p => p.id === id);
-    if (!item) return;
+      // ===== KARTALAR =====
+      grid.style.display   = 'grid';
+      grid.style.minHeight = 'auto';
 
-    const card = document.createElement("div");
-    card.className = "product-card";
+      savedIds.forEach(id => {
+        const item = products.find(p => p.id === id);
+        if (!item) return;
 
-    card.innerHTML = `
-      <div class="discount-badge">${item.discount}</div>
-      <img src="${item.image}" alt="${item.title}">
-      <div class="name">${item.title}</div>
-      <div class="rating">${item.rating}</div>
-      <div class="reviews">${item.reviews}</div>
-      <div class="price">${item.price}</div>
-      <div class="installment">${item.installment}</div>
-      
-      <button class="remove-btn" data-id="${id}" style="margin-top:15px; background:#ef4444; color:white; border:none; padding:10px 20px; border-radius:10px; cursor:pointer;">
-        Olib tashlash
-      </button>
-    `;
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.innerHTML = `
+          <div class="discount-badge">${item.discount}</div>
 
-    grid.appendChild(card);
-  });
+          <div class="icons">
+            <button class="heart-btn" data-id="${item.id}">
+              <i class="ri-heart-3-line"></i>
+            </button>
+            <button class="compare-btn" data-id="${item.id}">
+              <i class="ri-scales-line"></i>
+            </button>
+          </div>
 
-  // Olib tashlash tugmalari logikasi...
-  document.querySelectorAll('.remove-btn').forEach(btn => {
-    btn.onclick = () => { // addEventListener o'rniga qisqaroq
-      const id = parseInt(btn.dataset.id);
-      let items = JSON.parse(localStorage.getItem('favorites')) || [];
-      items = items.filter(i => i !== id);
-      localStorage.setItem('favorites', JSON.stringify(items));
-      renderFavorites();
+          <img src="${item.image}" alt="${item.title}"
+               onclick="goToObzor(${item.id})" style="cursor:pointer;">
+
+          <div class="name" onclick="goToObzor(${item.id})">${item.title}</div>
+          <div class="rating">${item.rating}</div>
+          <div class="reviews">${item.reviews}</div>
+          <div class="price">${item.price}</div>
+          <div class="installment">${item.installment}</div>
+
+          <div class="buttons">
+            <button class="buy-btn"><span class="btn-text">Sotib olish</span></button>
+            <button class="cart-btn" data-id="${item.id}">
+              <i class="ri-shopping-cart-2-line"></i>
+            </button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      // ❤️ bosilganda sahifadan o'chirish
+      document.querySelectorAll('.heart-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.stopImmediatePropagation();
+          const id = parseInt(btn.dataset.id);
+          let items = JSON.parse(localStorage.getItem('favorites')) || [];
+          items = items.filter(i => i !== id);
+          localStorage.setItem('favorites', JSON.stringify(items));
+          renderFavorites();
+          updateCounts();
+        });
+      });
+
+      addListeners();
+      restoreIconStates();
       updateCounts();
-    };
-  });
-}
-    window.addEventListener('load', renderFavorites);
+
+      if (typeof addCartListeners === 'function') addCartListeners();
+    }
+
+    function goToObzor(id) {
+      window.location.href = './obzor.html?id=' + id;
+    }
+
+    window.addEventListener('load', () => {
+      renderFavorites();
+    });
   </script>
 </body>
 </html>
