@@ -68,23 +68,33 @@ const discountProducts = products.filter(p => p.id >= 51 && p.id <= 60);
 const books = products.filter(p =>p.id >= 101 && p.id <=115);
 
 // ====================== SAHIFAGA O'TISH ======================
+// ====================== SAHIFAGA O'TISH ======================
 function goToPage(page) {
-  window.location.href = page;
+    window.location.href = page;
 }
 
 // ====================== KARTA HTML (bir xil ko'rinish) ======================
 function createCardHTML(item) {
+  // Проверяем, где мы находимся (в корне или в папке html)
+  const isSubPage = window.location.pathname.includes('/html/');
+  
+  // Если мы в папке html, нужно выйти на уровень выше (../)
+  // Если на главной, путь остается прямым
+  const prefix = isSubPage ? "../../" : "";
+  const finalImagePath = prefix + item.image;
+  const reviewPage = prefix + 'src/html/obzor.html?id=' + item.id;
+
   return `
     <div class="discount-badge">${item.discount}</div>
     <div class="icons">
       <button class="heart-btn" data-id="${item.id}"><i class="ri-heart-3-line"></i></button>
       <button class="compare-btn" data-id="${item.id}"><i class="ri-scales-line"></i></button>
     </div>
-    <img src="${item.image}" alt="${item.title}"
-         onclick="goToPage('../../src/html/obzor.html?id=${item.id}')"
+    <img src="${finalImagePath}" alt="${item.title}"
+         onclick="goToPage('${reviewPage}')"
          style="cursor:pointer;">
     <div class="name"
-         onclick="goToPage('../../src/html/obzor.html?id=${item.id}')"
+         onclick="goToPage('${reviewPage}')"
          style="cursor:pointer;">${item.title}</div>
     <div class="rating">${item.rating}</div>
     <div class="reviews">${item.reviews}</div>

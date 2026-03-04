@@ -532,7 +532,7 @@
         `;
         return;
       }
-
+      const fixedPath = "../../" + product.image;
       // Oy bo'yicha narx hisoblash
       const priceNum = parseInt(product.price.replace(/\D/g, ''));
       const monthly6  = Math.round(priceNum / 6).toLocaleString('ru-RU');
@@ -543,20 +543,20 @@
         <div class="product-images">
           <div class="product-thumbs">
             <div class="thumb active" onclick="setMainImg(this, '${product.image}')">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
             <div class="thumb" onclick="setMainImg(this, '${product.image}')">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
             <div class="thumb" onclick="setMainImg(this, '${product.image}')">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
             <div class="thumb" onclick="setMainImg(this, '${product.image}')">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
           </div>
           <div class="product-main-img">
-            <img id="mainImg" src="${product.image}" alt="${product.title}">
+            <img id="mainImg" src="${fixedPath}" alt="${product.title}">
             <div class="action-icons">
               <button title="Избранное" onclick="toggleFav(${product.id}, this)">
                 <i class="ri-heart-3-line" id="favIcon_${product.id}"></i>
@@ -583,13 +583,13 @@
           <div class="option-label">Цвет : <strong>Awesome White</strong></div>
           <div class="color-options">
             <div class="color-option active">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
             <div class="color-option">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
             <div class="color-option">
-              <img src="${product.image}" alt="">
+              <img src="${fixedPath}" alt="">
             </div>
           </div>
 
