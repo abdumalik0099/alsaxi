@@ -12,69 +12,73 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="icon" type="image/png" sizes="50x50" href="./src/assets/svg/Снимок экрана 2026-02-24 100205.png">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="50x50"
+      href="./src/assets/svg/Снимок экрана 2026-02-24 100205.png"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
     />
   </head>
   <body>
-    
     <header>
       <nav class="nav">
-        <div class=" nav-sticky">
+        <div class="nav-sticky">
           <div class="asosiy nav-sticky container">
-          <div class="iconNav">
-            <img src="./src/assets/svg/asaxiy-logo.svg" alt="" />
-          </div>
-          <div class="btn_nav">
-            <button class="category-btn category-main-btn">
-  <div class="menu-icon">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-  <span class="btn-text">Категории</span>
-</button>
-          </div>
-          <div class="inputNav">
-            <input class="navSearch" type="text" placeholder="поиск..." />
-            <button class="search">Искать</button>
-          </div>
-           <div class="nav_ikons">
-            <div onclick="goToPage('./src/html/taqqoslash.html')">
-              <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
-              <div>Сравнение</div>
+            <div class="iconNav">
+              <img src="./src/assets/svg/asaxiy-logo.svg" alt="" />
             </div>
+            <div class="btn_nav">
+              <button class="category-btn category-main-btn">
+                <div class="menu-icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span class="btn-text">Категории</span>
+              </button>
+            </div>
+            <div class="inputNav">
+              <input class="navSearch" type="text" placeholder="поиск..." />
+              <button class="search">Искать</button>
+            </div>
+            <div class="nav_ikons">
+              <div onclick="goToPage('./src/html/taqqoslash.html')">
+                <i class="ri-scales-fill"><h5 id="taqqoslash">0</h5></i>
+                <div>Сравнение</div>
+              </div>
 
-            <!-- Qolgan ikonlar o'zgarmaydi -->
-            <div>
-              <i class="ri-bank-card-line"></i>
-              <div>Оплатить</div>
-            </div>
-            <div>
-              <i class="ri-truck-line"></i>
-              <div>Отследить</div>
-            </div>
-            <div onclick="goToPage('./src/html/savat.html')">
-              <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
-              <div>Корзина</div>
-            </div>
+              <!-- Qolgan ikonlar o'zgarmaydi -->
+              <div>
+                <i class="ri-bank-card-line"></i>
+                <div>Оплатить</div>
+              </div>
+              <div>
+                <i class="ri-truck-line"></i>
+                <div>Отследить</div>
+              </div>
+              <div onclick="goToPage('./src/html/savat.html')">
+                <i class="ri-shopping-cart-2-line"><h5 id="shop">0</h5></i>
+                <div>Корзина</div>
+              </div>
 
-            <div onclick="goToPage('./src/html/yurak.html')">
-              <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
-              <div>Избранное</div>
+              <div onclick="goToPage('./src/html/yurak.html')">
+                <i class="ri-poker-hearts-line"><h5 id="yurak">0</h5></i>
+                <div>Избранное</div>
+              </div>
+              <div>
+                <i class="ri-global-line"></i>
+                <div>O'zbekcha</div>
+              </div>
+              <div id="loginTrigger" style="cursor: pointer">
+                <i class="ri-user-add-line"></i>
+                <div>Войти</div>
+              </div>
             </div>
-            <div>
-              <i class="ri-global-line"></i>
-              <div>O'zbekcha</div>
-            </div>
-            <div id="loginTrigger" style="cursor:pointer;">
-  <i class="ri-user-add-line"></i>
-  <div>Войти</div>
-</div>
           </div>
-        </div>
         </div>
         <hr />
         <div class="bottom_nav">
@@ -84,7 +88,12 @@
             <div class="havo"><h3>Воздухоочистители</h3></div>
             <div class="telefon"><h3>Смартфоны</h3></div>
             <div class="maoshiyTexnika"><h3>Бытовая техника</h3></div>
-            <div onclick="goToPage('./src/html/kitoblar.html')" class="kitoblar"><h3>Книги</h3></div>
+            <div
+              onclick="goToPage('./src/html/kitoblar.html')"
+              class="kitoblar"
+            >
+              <h3>Книги</h3>
+            </div>
             <div class="televizor"><h3>Телевизоры</h3></div>
             <div class="noutbuk"><h3>Ноутбуки</h3></div>
           </div>
@@ -262,7 +271,7 @@
                   <img src="./src/assets/img/wifi.webp" alt="" />
                   <div class="price">149 000 сум</div>
                   <div class="old-price">199 000 сум</div>
-                  <div class="name">Wi-Fi роутер Xiaomi Mi Router </div>
+                  <div class="name">Wi-Fi роутер Xiaomi Mi Router</div>
                   <button
                     class="date-btn"
                     onclick="this.classList.toggle('active')"
@@ -279,7 +288,7 @@
                   <img src="./src/assets/img/televiror.webp" alt="" />
                   <div class="price">669 000 сум</div>
                   <div class="old-price">869 000 сум</div>
-                  <div class="name">Телевизор Hisense 43A6Q 4K </div>
+                  <div class="name">Телевизор Hisense 43A6Q 4K</div>
                   <button
                     class="date-btn"
                     onclick="this.classList.toggle('active')"
@@ -296,7 +305,7 @@
                   <img src="./src/assets/img/havotozalagich.webp" alt="" />
                   <div class="price">179 000 сум</div>
                   <div class="old-price">289 000 сум</div>
-                  <div class="name">Очиститель воздуха Xiaomi </div>
+                  <div class="name">Очиститель воздуха Xiaomi</div>
                   <button
                     class="date-btn"
                     onclick="this.classList.toggle('active')"
@@ -415,345 +424,451 @@
         <div id="product-grid" class="product-grid"></div>
       </div>
       <div class="bigBanner">
-        <div class="big1"> 
+        <div class="big1">
           <div class="texts">
-            <h1>Asaxiy <br> Market</h1>
-            <p class="text">Сканируйте QR-код и скачивайте приложение и совершайте покупки быстро и удобно</p>
-            <img class="qr" src="./src/assets/svg/qr.svg" alt="">
+            <h1>
+              Asaxiy <br />
+              Market
+            </h1>
+            <p class="text">
+              Сканируйте QR-код и скачивайте приложение и совершайте покупки
+              быстро и удобно
+            </p>
+            <img class="qr" src="./src/assets/svg/qr.svg" alt="" />
             <div class="tarmoq">
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-apple-fill"></i>
-      <div class="btn-text">
-        <strong>App Store</strong>
-        <span>Скачайте в</span>
-      </div>
-    </div>
-  </button>
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-apple-fill"></i>
+                  <div class="btn-text">
+                    <strong>App Store</strong>
+                    <span>Скачайте в</span>
+                  </div>
+                </div>
+              </button>
 
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-google-play-fill"></i>
-      <div class="btn-text">
-        <strong>Google Play</strong>
-        <span>Доступно в</span>
-      </div>
-    </div>
-  </button>
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-google-play-fill"></i>
+                  <div class="btn-text">
+                    <strong>Google Play</strong>
+                    <span>Доступно в</span>
+                  </div>
+                </div>
+              </button>
 
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-smartphone-line"></i>
-      <div class="btn-text">
-        <strong>AppGallery</strong>
-        <span>Скачайте в</span>
-      </div>
-    </div>
-  </button>
-</div>
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-smartphone-line"></i>
+                  <div class="btn-text">
+                    <strong>AppGallery</strong>
+                    <span>Скачайте в</span>
+                  </div>
+                </div>
+              </button>
+            </div>
           </div>
           <div class="imgs">
-            <img src="./src/assets/svg/banner_market-1.webp" alt="">
+            <img src="./src/assets/svg/banner_market-1.webp" alt="" />
           </div>
         </div>
-        <div class="big2"> 
+        <div class="big2">
           <div class="texts">
-            <h1>Asaxiy <br> books</h1>
-            <p class="text">Сканируйте QR-код и скачивайте приложение и совершайте покупки быстро и удобно</p>
-            <img class="qr" src="./src/assets/svg/qr.svg" alt="">
-<div class="tarmoq">
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-apple-fill"></i>
-      <div class="btn-text">
-        <span>Скачайте в</span>
-        <strong>App Store</strong>
-      </div>
-    </div>
-  </button>
+            <h1>
+              Asaxiy <br />
+              books
+            </h1>
+            <p class="text">
+              Сканируйте QR-код и скачивайте приложение и совершайте покупки
+              быстро и удобно
+            </p>
+            <img class="qr" src="./src/assets/svg/qr.svg" alt="" />
+            <div class="tarmoq">
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-apple-fill"></i>
+                  <div class="btn-text">
+                    <span>Скачайте в</span>
+                    <strong>App Store</strong>
+                  </div>
+                </div>
+              </button>
 
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-google-play-fill"></i>
-      <div class="btn-text">
-        <span>Доступно в</span>
-        <strong>Google Play</strong>
-      </div>
-    </div>
-  </button>
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-google-play-fill"></i>
+                  <div class="btn-text">
+                    <span>Доступно в</span>
+                    <strong>Google Play</strong>
+                  </div>
+                </div>
+              </button>
 
-  <button class="btn">
-    <div class="tarmoqFlex">
-      <i class="ri-smartphone-line"></i>
-      <div class="btn-text">
-        <span>O'rnatib yuklang</span>
-        <strong>AppGallery</strong>
-      </div>
-    </div>
-  </button>
-</div>
+              <button class="btn">
+                <div class="tarmoqFlex">
+                  <i class="ri-smartphone-line"></i>
+                  <div class="btn-text">
+                    <span>O'rnatib yuklang</span>
+                    <strong>AppGallery</strong>
+                  </div>
+                </div>
+              </button>
+            </div>
           </div>
           <div class="imgs">
-            <img src="./src/assets/svg/banner-books-2.webp" alt="">
+            <img src="./src/assets/svg/banner-books-2.webp" alt="" />
           </div>
         </div>
       </div>
 
-    <div class="cards50">
-      <h2 style="margin: 40px 0 20px; font-size: 28px;">Скидки</h2>
-      <div id="product-grid2" class="product-grid"></div>
-    </div>
-    <!-- ====================== BREND LAR SWIPERI ====================== -->
-<div class="brands-section">
-  <h2>Известные бренды</h2>
-  <div class="swiper brandsSwiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><img src="./src/assets/svg/acerbrend.webp" alt="hoco"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/Applebrand.webp" alt="artel"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/artelbrend.webp" alt="Kukmara"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/asusbrend.webp" alt="Samsung"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/boshchbrend.webp" alt="Bosch"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/lenivobrend.webp" alt="Nokia"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/nokiabrend.webp" alt="Nokia"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/samsungbrend.webp" alt="Nokia"></div>
-      <div class="swiper-slide"><img src="./src/assets/svg/xiaomibrend.webp" alt="Nokia"></div>
-      <!-- Yana logolarni qo‘shaverasiz -->
-    </div>
-  </div>
-</div>
-<div class="about-section">
-  <h2>О компании Asaxiy</h2>
-  
-  <p class="about-text">
-    Главное преимущество нашей компании, которая занимается поставками бытовой техники и электроники в Узбекистане — многолетний опыт работы и заслуженное доброе имя. 
-    С момента своего развития интернет-магазин Asaxiy и его команда неустанно следит за тенденциями спроса потребительского рынка, 
-    что дает нам возможность всегда быть в курсе самых последних технологий и инновационных решений. 
-    Специалисты компании внимательно изучают желания наших клиентов, поэтому ресурс постоянно обновляется качественными новинками, 
-    имеющими доступную стоимость.
-  </p>
-
-  <div class="accordion">
-
-    <!-- 1-item -->
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <span>Принцип работы компании</span>
-        <i class="ri-arrow-down-s-line arrow"></i>
+      <div class="cards50">
+        <h2 style="margin: 40px 0 20px; font-size: 28px">Скидки</h2>
+        <div id="product-grid2" class="product-grid"></div>
       </div>
-      <div class="accordion-content">
-        <p>Каждый покупатель должен в комфортных условиях выбрать <span>телефоны и гаджеты</span> максимально быстро, поэтому мы создали интуитивно понятное меню, которое легко освоить новым пользователям сети. Для большего удобства мы раздели меню на соответствующие разделы, в которых вы найдете более 15 тысяч разновидностей оргтехники и сопутствующих товаров. Выглядят они следующим образом:</p>
-        <ul>
-          <li><span>посуда</span> – здесь вы найдете самые необходимые атрибуты домашнего обихода, без которого не обходится наша повседневная жизни. Товары, представленные на сайте нашего магазина, обладают высоким качеством и прочностью;</li>
-          <li><span>кондиционеры</span>и климатическая техника – раздел позволяет сделать полезные покупки в соответствии с вашими потребностями. К каждому товару имеется описание, которое позволит сделать правильный выбор;</li>
-          <li><span>телевизоры, видео и аудио</span>находятся в следующем разделе, который достойно позиционируется как бытовая техника. Здесь представлены самые последние новинки и разработки, имеющие полномасштабный перечень функций, идущий в ногу со временем;</li>
-          <li><span>Техника для красоты и здоровья </span>– один из любимых отделов наших постоянных покупательниц, которые знают цену здоровья и стремятся к естественной красоте путем правильного питания;</li>
-          <li><span>Компьютеры и оргтехника</span>являются самым большим разделом, так как здесь включены всевозможные аксессуары и вспомогательные комплектующие, призванные облегчить процесс компьютеризации и уменьшить трату рабочего времени.</li>
-        </ul>
-        <h3>Также наша компания Asaxiy.uz позаботилась про любителей игровых сервисов, о чем может сказать раздел <span>для геймеров</span>. Здесь предоставлено мощное компьютерное обеспечение, игровые мыши и клавиатуры, которые позволят осуществлять игровой процесс с максимальной точностью и меткостью. А для любителей чтения мы предоставили усовершенствованную литературу в виде аудио <span>книг</span>, тематика жанра которых достаточно широка.</h3>
+      <!-- ====================== BREND LAR SWIPERI ====================== -->
+      <div class="brands-section">
+        <h2>Известные бренды</h2>
+        <div class="swiper brandsSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/acerbrend.webp" alt="hoco" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/Applebrand.webp" alt="artel" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/artelbrend.webp" alt="Kukmara" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/asusbrend.webp" alt="Samsung" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/boshchbrend.webp" alt="Bosch" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/lenivobrend.webp" alt="Nokia" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/nokiabrend.webp" alt="Nokia" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/samsungbrend.webp" alt="Nokia" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./src/assets/svg/xiaomibrend.webp" alt="Nokia" />
+            </div>
+            <!-- Yana logolarni qo‘shaverasiz -->
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="about-section">
+        <h2>О компании Asaxiy</h2>
 
-    <!-- 2-item -->
-    <div class="accordion-item">
-      <div class="accordion-header">
-        <span>Nashi preimushchestva</span>
-        <i class="ri-arrow-down-s-line arrow"></i>
+        <p class="about-text">
+          Главное преимущество нашей компании, которая занимается поставками
+          бытовой техники и электроники в Узбекистане — многолетний опыт работы
+          и заслуженное доброе имя. С момента своего развития интернет-магазин
+          Asaxiy и его команда неустанно следит за тенденциями спроса
+          потребительского рынка, что дает нам возможность всегда быть в курсе
+          самых последних технологий и инновационных решений. Специалисты
+          компании внимательно изучают желания наших клиентов, поэтому ресурс
+          постоянно обновляется качественными новинками, имеющими доступную
+          стоимость.
+        </p>
+
+        <div class="accordion">
+          <!-- 1-item -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>Принцип работы компании</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Каждый покупатель должен в комфортных условиях выбрать
+                <span>телефоны и гаджеты</span> максимально быстро, поэтому мы
+                создали интуитивно понятное меню, которое легко освоить новым
+                пользователям сети. Для большего удобства мы раздели меню на
+                соответствующие разделы, в которых вы найдете более 15 тысяч
+                разновидностей оргтехники и сопутствующих товаров. Выглядят они
+                следующим образом:
+              </p>
+              <ul>
+                <li>
+                  <span>посуда</span> – здесь вы найдете самые необходимые
+                  атрибуты домашнего обихода, без которого не обходится наша
+                  повседневная жизни. Товары, представленные на сайте нашего
+                  магазина, обладают высоким качеством и прочностью;
+                </li>
+                <li>
+                  <span>кондиционеры</span>и климатическая техника – раздел
+                  позволяет сделать полезные покупки в соответствии с вашими
+                  потребностями. К каждому товару имеется описание, которое
+                  позволит сделать правильный выбор;
+                </li>
+                <li>
+                  <span>телевизоры, видео и аудио</span>находятся в следующем
+                  разделе, который достойно позиционируется как бытовая техника.
+                  Здесь представлены самые последние новинки и разработки,
+                  имеющие полномасштабный перечень функций, идущий в ногу со
+                  временем;
+                </li>
+                <li>
+                  <span>Техника для красоты и здоровья </span>– один из любимых
+                  отделов наших постоянных покупательниц, которые знают цену
+                  здоровья и стремятся к естественной красоте путем правильного
+                  питания;
+                </li>
+                <li>
+                  <span>Компьютеры и оргтехника</span>являются самым большим
+                  разделом, так как здесь включены всевозможные аксессуары и
+                  вспомогательные комплектующие, призванные облегчить процесс
+                  компьютеризации и уменьшить трату рабочего времени.
+                </li>
+              </ul>
+              <h3>
+                Также наша компания Asaxiy.uz позаботилась про любителей игровых
+                сервисов, о чем может сказать раздел <span>для геймеров</span>.
+                Здесь предоставлено мощное компьютерное обеспечение, игровые
+                мыши и клавиатуры, которые позволят осуществлять игровой процесс
+                с максимальной точностью и меткостью. А для любителей чтения мы
+                предоставили усовершенствованную литературу в виде аудио
+                <span>книг</span>, тематика жанра которых достаточно широка.
+              </h3>
+            </div>
+          </div>
+
+          <!-- 2-item -->
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>Nashi preimushchestva</span>
+              <i class="ri-arrow-down-s-line arrow"></i>
+            </div>
+            <div class="accordion-content">
+              <p>
+                Компания Asaxiy.uz стремительно прорабатывает все свои
+                возможности, и сегодня мы предлагаем своим клиентам значительные
+                <span>скидки</span> и быструю доставку в ряды городов. В зону
+                нашего обслуживания входят такие города как Андижане, Бухаре,
+                Фергане, Джизак, Хорезм, Наманган, Навои, Кашкадарью,
+                Самарканде, Сырдарье, Сурхандарье и всей Ташкентской области, а
+                также Республика Каракалпакстан. И это неполная карта поставок.
+                Уточнить все наши зоны обслуживания вы можете, позвонив
+                специалисту интернет-магазина, который предоставит всю
+                интересующую вас информацию.
+              </p>
+              <h4>
+                Каждый покупатель нашего магазина – достойный гость, которому мы
+                предложим приятные скидки и бонусные программы. Мы полностью
+                сопроводим весь процесс подбора товаров согласно требованиям
+                клиентам и произведем доставку любым удобным способом.
+              </h4>
+            </div>
+          </div>
+        </div>
+
+        <div class="company-info">
+          <p><strong>"Asaxiy Books" OOO</strong></p>
+          <p>Registratsiya: 646439</p>
+          <p>INN: 305829008</p>
+          <p>Direktor: Allayev Firuz Abdunasimovich</p>
+        </div>
       </div>
-      <div class="accordion-content">
-        <p>Компания Asaxiy.uz стремительно прорабатывает все свои возможности, и сегодня мы предлагаем своим клиентам значительные <span>скидки</span> и быструю доставку в ряды городов. В зону нашего обслуживания входят такие города как Андижане, Бухаре, Фергане, Джизак, Хорезм, Наманган, Навои, Кашкадарью, Самарканде, Сырдарье, Сурхандарье и всей Ташкентской области, а также Республика Каракалпакстан. И это неполная карта поставок. Уточнить все наши зоны обслуживания вы можете, позвонив специалисту интернет-магазина, который предоставит всю интересующую вас информацию.</p>
-        <h4>Каждый покупатель нашего магазина – достойный гость, которому мы предложим приятные скидки и бонусные программы. Мы полностью сопроводим весь процесс подбора товаров согласно требованиям клиентам и произведем доставку любым удобным способом.</h4>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="company-info">
-    <p><strong>"Asaxiy Books" OOO</strong></p>
-    <p>Registratsiya: 646439</p>
-    <p>INN: 305829008</p>
-    <p>Direktor: Allayev Firuz Abdunasimovich</p>
-  </div>
-</div>
     </main>
     <footer>
       <div class="topFooter">
         <div class="flex container">
           <div class="displayFlex">
-            <div><img src="./src/assets/svg/footlogo1.svg" alt="1"></div>
-            <div><h3>Больше не нужно ходить на базар</h3><p>У нас выгодные цены и доставка до дома</p></div>
+            <div><img src="./src/assets/svg/footlogo1.svg" alt="1" /></div>
+            <div>
+              <h3>Больше не нужно ходить на базар</h3>
+              <p>У нас выгодные цены и доставка до дома</p>
+            </div>
           </div>
           <div class="displayFlex">
-            <div><img src="./src/assets/svg/footlogo2.svg" alt="1"></div>
-            <div><h3>Быстрая доставка</h3><p>Наш сервис удивит вас</p></div>
+            <div><img src="./src/assets/svg/footlogo2.svg" alt="1" /></div>
+            <div>
+              <h3>Быстрая доставка</h3>
+              <p>Наш сервис удивит вас</p>
+            </div>
           </div>
           <div class="displayFlex">
-            <div><img src="./src/assets/svg/footlogo3.svg" alt="1"></div>
-            <div><h3>Удобства для вас</h3><p>Быстрое оформление и гарантия на возврат в случае неисправности</p></div>
+            <div><img src="./src/assets/svg/footlogo3.svg" alt="1" /></div>
+            <div>
+              <h3>Удобства для вас</h3>
+              <p>
+                Быстрое оформление и гарантия на возврат в случае неисправности
+              </p>
+            </div>
           </div>
           <div class="displayFlex">
-            <div><img src="./src/assets/svg/footlogo4.svg" alt="1"></div>
-            <div><h3>Рассрочка</h3><p>Без предоплаты на 3, 6 или 12 месяцев</p></div>
+            <div><img src="./src/assets/svg/footlogo4.svg" alt="1" /></div>
+            <div>
+              <h3>Рассрочка</h3>
+              <p>Без предоплаты на 3, 6 или 12 месяцев</p>
+            </div>
           </div>
         </div>
       </div>
-      
+
       <!-- footer -->
 
-       <div class="footer__container">
-
-    <!-- ===== TOP: 5 ustun ===== -->
-    <div class="footer__top">
-
-      <!-- 1. Об Asaxiy -->
-      <div class="footer__col">
-        <h4 class="footer__col-title">Об Asaxiy</h4>
-        <a class="footer__col-link">О нас</a>
-        <a class="footer__col-link">Карьера в Asaxiy</a>
-        <a class="footer__col-link">Лицензии и сертификаты</a>
-        <a class="footer__col-link">Политика Asaxiy</a>
-        <a class="footer__col-link">Контакты</a>
-      </div>
-
-      <!-- 2. Покупателям -->
-      <div class="footer__col">
-        <h4 class="footer__col-title">Покупателям</h4>
-        <a class="footer__col-link">Часто задаваемые вопросы</a>
-        <a class="footer__col-link">Статус «El-yurt ishonchi»</a>
-        <a class="footer__col-link">«Asaxiy Plus»</a>
-        <a class="footer__col-link">Договор публичной оферты «Asaxiy Plus»</a>
-        <a class="footer__col-link">Оферта для рассрочки</a>
-        <a class="footer__col-link">Публичная оферта</a>
-        <a class="footer__col-link">Публичная оферта для онлайн-курсов</a>
-      </div>
-
-      <!-- 3. Информации -->
-      <div class="footer__col">
-        <h4 class="footer__col-title">Информации</h4>
-        <a class="footer__col-link">Наши бренды</a>
-        <a class="footer__col-link">Новости</a>
-        <a class="footer__col-link">Блог</a>
-        <a class="footer__col-link">Карта сайта</a>
-      </div>
-
-      <!-- 4. Доставка и магазины -->
-      <div class="footer__col">
-        <h4 class="footer__col-title">Доставка и магазины</h4>
-        <div class="footer__delivery">
-          <div class="footer__delivery-card">
-            <!-- O'zingizning rasmingizni qo'ying -->
-            <img src="./src/assets/svg/magazinfooter.svg" alt="Магазин">
-            <span>Наши магазины</span>
-            <i class="ri-arrow-right-s-line"></i>
+      <div class="footer__container">
+        <!-- ===== TOP: 5 ustun ===== -->
+        <div class="footer__top">
+          <!-- 1. Об Asaxiy -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Об Asaxiy</h4>
+            <a class="footer__col-link">О нас</a>
+            <a class="footer__col-link">Карьера в Asaxiy</a>
+            <a class="footer__col-link">Лицензии и сертификаты</a>
+            <a class="footer__col-link">Политика Asaxiy</a>
+            <a class="footer__col-link">Контакты</a>
           </div>
-          <div class="footer__delivery-card">
-            <img src="./src/assets/svg/lokatsiyaFooter.svg" alt="Пункт выдачи">
-            <span>Пункты выдачи</span>
-            <i class="ri-arrow-right-s-line"></i>
-          </div>
-          <div class="footer__delivery-card">
-            <img src="./src/assets/svg/perevozkaFooter.svg" alt="Доставка">
-            <span>Доставка</span>
-            <i class="ri-arrow-right-s-line"></i>
-          </div>
-        </div>
-      </div>
 
-      <!-- 5. Для связи -->
-      <div class="footer__col">
-        <h4 class="footer__col-title">Для связи</h4>
-        <div class="footer__contact">
-          <a class="footer__contact-item">
-            <i class="ri-phone-line"></i>
-            +998 71 200 01 05
-          </a>
-          <a class="footer__contact-item">
-            <i class="ri-mail-line"></i>
-            info@asaxiy.uz
-          </a>
-          <a class="footer__contact-item">
-            <i class="ri-telegram-line"></i>
-            Telegram bot
-          </a>
-          <a class="footer__contact-item">
-            <i class="ri-map-pin-line"></i>
-            улица Гавхар 124, Ташкент
-          </a>
-        </div>
-      </div>
+          <!-- 2. Покупателям -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Покупателям</h4>
+            <a class="footer__col-link">Часто задаваемые вопросы</a>
+            <a class="footer__col-link">Статус «El-yurt ishonchi»</a>
+            <a class="footer__col-link">«Asaxiy Plus»</a>
+            <a class="footer__col-link"
+              >Договор публичной оферты «Asaxiy Plus»</a
+            >
+            <a class="footer__col-link">Оферта для рассрочки</a>
+            <a class="footer__col-link">Публичная оферта</a>
+            <a class="footer__col-link">Публичная оферта для онлайн-курсов</a>
+          </div>
 
-    </div>
-    <!-- ===== TOP TUGADI ===== -->
+          <!-- 3. Информации -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Информации</h4>
+            <a class="footer__col-link">Наши бренды</a>
+            <a class="footer__col-link">Новости</a>
+            <a class="footer__col-link">Блог</a>
+            <a class="footer__col-link">Карта сайта</a>
+          </div>
 
-    <!-- ===== BOTTOM: To'lov + Ijtimoiy tarmoqlar ===== -->
-    <div class="footer__bottom">
+          <!-- 4. Доставка и магазины -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Доставка и магазины</h4>
+            <div class="footer__delivery">
+              <div class="footer__delivery-card">
+                <!-- O'zingizning rasmingizni qo'ying -->
+                <img src="./src/assets/svg/magazinfooter.svg" alt="Магазин" />
+                <span>Наши магазины</span>
+                <i class="ri-arrow-right-s-line"></i>
+              </div>
+              <div class="footer__delivery-card">
+                <img
+                  src="./src/assets/svg/lokatsiyaFooter.svg"
+                  alt="Пункт выдачи"
+                />
+                <span>Пункты выдачи</span>
+                <i class="ri-arrow-right-s-line"></i>
+              </div>
+              <div class="footer__delivery-card">
+                <img
+                  src="./src/assets/svg/perevozkaFooter.svg"
+                  alt="Доставка"
+                />
+                <span>Доставка</span>
+                <i class="ri-arrow-right-s-line"></i>
+              </div>
+            </div>
+          </div>
 
-      <!-- To'lov usullari -->
-      <div>
-        <h4 class="footer__bottom-title">Виды оплаты</h4>
-        <div class="footer__payments">
-          <!-- Rasmlarni o'zingiz qo'ying -->
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footercarta.svg" alt="UzCard">
-          </div>
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footerpayme.svg" alt="Payme">
-          </div>
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footeruzum.svg" alt="Uzum">
-          </div>
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footerclick.webp" alt="Click">
-          </div>
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footerpaynet.svg" alt="Paynet">
-          </div>
-          <div class="footer__payment-card">
-            <img src="./src/assets/svg/footerxazna.webp" alt="Xazna">
+          <!-- 5. Для связи -->
+          <div class="footer__col">
+            <h4 class="footer__col-title">Для связи</h4>
+            <div class="footer__contact">
+              <a class="footer__contact-item">
+                <i class="ri-phone-line"></i>
+                +998 71 200 01 05
+              </a>
+              <a class="footer__contact-item">
+                <i class="ri-mail-line"></i>
+                info@asaxiy.uz
+              </a>
+              <a class="footer__contact-item">
+                <i class="ri-telegram-line"></i>
+                Telegram bot
+              </a>
+              <a class="footer__contact-item">
+                <i class="ri-map-pin-line"></i>
+                улица Гавхар 124, Ташкент
+              </a>
+            </div>
           </div>
         </div>
-      </div>
+        <!-- ===== TOP TUGADI ===== -->
 
-      <!-- Ijtimoiy tarmoqlar -->
-      <div class="footer__socials-wrapper">
-        <h4 class="footer__bottom-title">Мы в соц. сетях</h4>
-        <div class="footer__socials">
-          <a class="footer__social-link footer__social-link--facebook">
-            <i class="ri-facebook-fill"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--telegram">
-            <i class="ri-telegram-fill"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--instagram">
-            <i class="ri-instagram-line"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--youtube">
-            <i class="ri-youtube-fill"></i>
-          </a>
-          <a class="footer__social-link footer__social-link--rss">
-            <i class="ri-rss-fill"></i>
-          </a>
+        <!-- ===== BOTTOM: To'lov + Ijtimoiy tarmoqlar ===== -->
+        <div class="footer__bottom">
+          <!-- To'lov usullari -->
+          <div>
+            <h4 class="footer__bottom-title">Виды оплаты</h4>
+            <div class="footer__payments">
+              <!-- Rasmlarni o'zingiz qo'ying -->
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footercarta.svg" alt="UzCard" />
+              </div>
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footerpayme.svg" alt="Payme" />
+              </div>
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footeruzum.svg" alt="Uzum" />
+              </div>
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footerclick.webp" alt="Click" />
+              </div>
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footerpaynet.svg" alt="Paynet" />
+              </div>
+              <div class="footer__payment-card">
+                <img src="./src/assets/svg/footerxazna.webp" alt="Xazna" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Ijtimoiy tarmoqlar -->
+          <div class="footer__socials-wrapper">
+            <h4 class="footer__bottom-title">Мы в соц. сетях</h4>
+            <div class="footer__socials">
+              <a class="footer__social-link footer__social-link--facebook">
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a class="footer__social-link footer__social-link--telegram">
+                <i class="ri-telegram-fill"></i>
+              </a>
+              <a class="footer__social-link footer__social-link--instagram">
+                <i class="ri-instagram-line"></i>
+              </a>
+              <a class="footer__social-link footer__social-link--youtube">
+                <i class="ri-youtube-fill"></i>
+              </a>
+              <a class="footer__social-link footer__social-link--rss">
+                <i class="ri-rss-fill"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ===== BOTTOM TUGADI ===== -->
+
+        <!-- ===== COPYRIGHT ===== -->
+        <div class="footer__copy">
+          2015 - 2026 Интернет-магазин asaxiy.uz: Бытовая техника и др. Доставка
+          товаров осуществляется во все регионы. Все права защищены.
         </div>
       </div>
-
-    </div>
-    <!-- ===== BOTTOM TUGADI ===== -->
-
-    <!-- ===== COPYRIGHT ===== -->
-    <div class="footer__copy">
-      2015 - 2026 Интернет-магазин asaxiy.uz: Бытовая техника и др. Доставка товаров осуществляется во все регионы. Все права защищены.
-    </div>
-
-  </div>
-
     </footer>
-<!-- ... head va header qismi o‘zgarmaydi ... -->
+    <!-- ... head va header qismi o‘zgarmaydi ... -->
 
-<script src="./src/js/script.js"></script>
-<script src="./src/js/gorizontal.js"></script>
-<script src="./src/js/fivetennKards.js"></script>
-<script src="./src/js/twentycards.js"></script>
-<script src="./src/js/search.js"></script>
-<script src="./src/js/animation.js"></script>
+    <script src="./src/js/script.js"></script>
+    <script src="./src/js/gorizontal.js"></script>
+    <script src="./src/js/fivetennKards.js"></script>
+    <script src="./src/js/twentycards.js"></script>
+    <script src="./src/js/search.js"></script>
+    <script src="./src/js/animation.js"></script>
   </body>
 </html>
 

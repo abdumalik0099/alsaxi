@@ -52,7 +52,7 @@ const products = [
   { id: 104, discount: "-15%", image: "../../src/assets/img/bezonomika.webp", title: "Браян Дюмейн: Безономика.", rating: "★★★★★", reviews: "203 отзывов", price: "119 000 сум", installment: "19 900 сум x 6 мес" },
   { id: 105, discount: "-30%", image: "../../src/assets/img/kitob.webp", title: "Думай и богатей",           rating: "★★★★★", reviews: "156 отзывов", price: "79 000 сум",  installment: "13 200 сум x 6 мес" },
   { id: 106, discount: "-10%", image: "../../src/assets/img/kitob.webp", title: "1984",                      rating: "★★★★★", reviews: "88 отзывов",  price: "109 000 сум", installment: "18 200 сум x 6 мес" },
-  { id: 107, discount: "-22%", image: "../../src/assets/img/kitob.webp", title: "Гарри Поттер и камень",     rating: "★★★★★", reviews: "312 отзывов", price: "129 000 сум", installment: "21 500 сум x 6 мес" },
+  { id: 107, discount: "-22%", image: "../../src/assets/img/kitob.webp", title: "Гарри Поттер и камень",     rating: "★★★★★",  reviews: "312 отзывов", price: "129 000 сум", installment: "21 500 сум x 6 мес" },
   { id: 108, discount: "-18%", image: "../../src/assets/img/kitob.webp", title: "Алхимик",                  rating: "★★★★☆", reviews: "67 отзывов",  price: "85 000 сум",  installment: "14 200 сум x 6 мес" },
   { id: 109, discount: "-25%", image: "../../src/assets/img/kitob.webp", title: "Война и мир",              rating: "★★★★★", reviews: "44 отзывов",  price: "175 000 сум", installment: "29 200 сум x 6 мес" },
   { id: 110, discount: "-12%", image: "../../src/assets/img/kitob.webp", title: "Преступление и наказание", rating: "★★★★★", reviews: "91 отзывов",  price: "95 000 сум",  installment: "15 800 сум x 6 мес" },
