@@ -593,7 +593,7 @@ function updateCartDropdown() {
     item.style.cursor = 'pointer';
     item.innerHTML = `
       <img src="../../${product.image}" alt="${product.title}">
-      <div class="cart-drop__item-info" onclick="goToPage('../../src/html/obzor.html?id=${id}')" style="cursor:pointer;flex:1;">
+      <div class="cart-drop__item-info" onclick="goToPage('src/html/obzor.html?id=${id}')" style="cursor:pointer;flex:1;">
         <div class="cart-drop__item-name">${product.title}</div>
         <div class="cart-drop__item-price">${product.price}</div>
       </div>
