@@ -506,10 +506,10 @@ function createCartDropdown() {
           <span>Сумма</span>
           <strong id="cartDropTotal">0 сум</strong>
         </div>
-        <button class="cart-drop__btn-main" onclick="goToPage('../../src/html/savat.html')">
+        <button class="cart-drop__btn-main" onclick="goToPage('src/html/savat.html')">
           ОФОРМИТЬ ПОКУПКУ
         </button>
-        <button class="cart-drop__btn-link" onclick="goToPage('../../src/html/savat.html')">
+        <button class="cart-drop__btn-link" onclick="goToPage('src/html/savat.html')">
           ПЕРЕЙТИ В КОРЗИНКУ
         </button>
       </div>
