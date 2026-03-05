@@ -469,21 +469,21 @@ window.addEventListener('load', createCategoryModal);
 // ===== OBZOR SAHIFASIGA O'TISH =====
 function goToObzor(id) {
   const path = window.location.pathname;
+  // Agar allaqachon html papkasida bo'lsak
   if (path.includes('/src/html/')) {
-    window.location.href = './obzor.html?id=' + id;
+    window.location.href = `./obzor.html?id=${id}`;
   } else {
-    window.location.href = '../../src/html/obzor.html?id=' + id;
+    // Agar asosiy sahifada (root) bo'lsak
+    window.location.href = `./src/html/obzor.html?id=${id}`;
   }
 }
 
-
-// ===== SAVAT SAHIFASIGA O'TISH (har qaysi sahifadan ishlaydi) =====
 function goToCartPage() {
   const path = window.location.pathname;
   if (path.includes('/src/html/')) {
     window.location.href = './savat.html';
   } else {
-    window.location.href = '../../src/html/savat.html';
+    window.location.href = './src/html/savat.html';
   }
 }
 
