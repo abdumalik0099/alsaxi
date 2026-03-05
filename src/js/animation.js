@@ -563,23 +563,25 @@ function positionDropdown(anchor) {
 // ===== DROPDOWNNI YANGILASH =====
 function updateCartDropdown() {
   const cartIds = JSON.parse(localStorage.getItem('cart')) || [];
-  const list    = document.getElementById('cartDropList');
-  const empty   = document.getElementById('cartDropEmpty');
-  const footer  = document.getElementById('cartDropFooter');
+  const list = document.getElementById('cartDropList');
+  const empty = document.getElementById('cartDropEmpty');
+  const footer = document.getElementById('cartDropFooter');
   const totalEl = document.getElementById('cartDropTotal');
 
   list.innerHTML = '';
 
   if (cartIds.length === 0) {
-    empty.style.display  = 'flex';
+    empty.style.display = 'flex';
     footer.style.display = 'none';
     return;
   }
 
-  empty.style.display  = 'none';
+  empty.style.display = 'none';
   footer.style.display = 'block';
 
   let total = 0;
+  // Hozirgi sahifa manzilini tekshirish
+  const isSubPage = window.location.pathname.includes('/src/html/');
 
   cartIds.slice(0, 5).forEach(id => {
     const product = products.find(p => p.id === id);
@@ -588,12 +590,14 @@ function updateCartDropdown() {
     const priceNum = parseInt(product.price.replace(/\D/g, ''));
     total += priceNum;
 
+    // Rasm yo'lini dinamik aniqlash
+    const imgPath = isSubPage ? `../../${product.image}` : `./${product.image}`;
+
     const item = document.createElement('div');
     item.className = 'cart-drop__item';
-    item.style.cursor = 'pointer';
     item.innerHTML = `
-      <img src="${product.image}" alt="${product.title}">
-      <div class="cart-drop__item-info" onclick="goToPage('src/html/obzor.html?id=${id}')" style="cursor:pointer;flex:1;">
+      <img src="${imgPath}" alt="${product.title}">
+      <div class="cart-drop__item-info" onclick="goToObzor(${id})" style="cursor:pointer;flex:1;">
         <div class="cart-drop__item-name">${product.title}</div>
         <div class="cart-drop__item-price">${product.price}</div>
       </div>
