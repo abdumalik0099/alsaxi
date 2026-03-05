@@ -568,6 +568,7 @@ function updateCartDropdown() {
   const footer = document.getElementById('cartDropFooter');
   const totalEl = document.getElementById('cartDropTotal');
 
+  if (!list) return; // Xatolik oldini olish uchun
   list.innerHTML = '';
 
   if (cartIds.length === 0) {
@@ -580,7 +581,8 @@ function updateCartDropdown() {
   footer.style.display = 'block';
 
   let total = 0;
-  // Hozirgi sahifa manzilini tekshirish
+  
+  // Sahifa qayerda turganini aniqlash (GitHub /alsaxi/ ni hisobga oladi)
   const isSubPage = window.location.pathname.includes('/src/html/');
 
   cartIds.slice(0, 5).forEach(id => {
@@ -590,14 +592,15 @@ function updateCartDropdown() {
     const priceNum = parseInt(product.price.replace(/\D/g, ''));
     total += priceNum;
 
-    // Rasm yo'lini dinamik aniqlash
+    // Eng muhim joyi: Rasm yo'lini to'g'irlash
+    // Agar obzor.html da bo'lsak ../../ qo'shadi, index.html da bo'lsak ./
     const imgPath = isSubPage ? `../../${product.image}` : `./${product.image}`;
 
     const item = document.createElement('div');
     item.className = 'cart-drop__item';
     item.innerHTML = `
-      <img src="${imgPath}" alt="${product.title}">
-      <div class="cart-drop__item-info" onclick="goToObzor(${id})" style="cursor:pointer;flex:1;">
+      <img src="${imgPath}" alt="${product.title}" style="width:50px; height:50px; object-fit:cover;">
+      <div class="cart-drop__item-info" onclick="goToObzor(${id})" style="cursor:pointer; flex:1;">
         <div class="cart-drop__item-name">${product.title}</div>
         <div class="cart-drop__item-price">${product.price}</div>
       </div>
@@ -617,7 +620,6 @@ function updateCartDropdown() {
 
   totalEl.textContent = total.toLocaleString('ru-RU') + ' сум';
 }
-
 // ===== SAVATDAN O'CHIRISH =====
 function removeFromCartDrop(id) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
